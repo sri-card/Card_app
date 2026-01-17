@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>言葉のカード</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body{
+  font-family: sans-serif;
+  text-align: center;
+  padding: 40px 20px;
+}
+button {
+  font-size: 18px;
+  padding: 12px 24px;
+}
+#card {
+  margin-top: 30px;
+  font-size: 20px;
+  line-height: 1.6;
+}
+</style>
+</head>
+<body>
+
+<h2>今の貴方に必要な言葉は？</h2>
+<p>深呼吸してからカードを引いてください</p>
+
+<button onclick="drawCard()">カードを引く</button>
+
+<div id="card"></div>
+
+<script src="cards.js"></script>
+<script>
+let used = false;
+function drawCard(){
+  if (used) return;
+  used = true;
+  const r = Math.floor(Math.random() * cards.length);
+  document.getElementById("card").innerText = cards[r];
+}
+</script>
+
+<body>
+</html>
+
